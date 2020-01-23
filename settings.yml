@@ -1,0 +1,4 @@
+svg_icons:
+  default: "comments|file|life-ring|layer-group|clipboard|hdd|map|chart-line|clock|road|rss-square"
+  type: "list"
+  list_type: "compact"
