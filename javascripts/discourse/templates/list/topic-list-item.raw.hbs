@@ -1,0 +1,81 @@
+{{#if bulkSelectEnabled}}
+  <div class="bulk-select">
+    <input type="checkbox" class="bulk-select">
+  </div>
+{{/if}}
+
+<div class='main-link clearfix'>
+  <span class='link-top-line'>
+    {{~raw-plugin-outlet name="topic-list-before-status"}}
+    {{~raw "topic-status" topic=topic}}
+    {{~topic-link topic class="raw-link raw-topic-link"}}
+    {{~#if topic.featured_link}}
+    {{~topic-featured-link topic}}
+    {{~/if}}
+    {{~raw-plugin-outlet name="topic-list-after-title"}}
+    {{~raw "list/unread-indicator" includeUnreadIndicator=topic.unread_by_group_member topicId=topic.id ~}}
+    {{~#if showTopicPostBadges}}
+    {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
+    {{~/if}}
+  </span>
+  <div class="link-bottom-line">
+    <div class="poster-meta">
+      <div>Posted by</div>
+      <div class="poster-name">
+        <a href="/users/{{topic.creator.username}}" data-auto-route="true" data-user-card="{{topic.lastPoster.username}}">
+          {{#if topic.creator.name}}
+            {{topic.creator.name}}
+          {{else}}
+            {{topic.creator.username}}
+          {{/if}}
+        </a>
+      </div>
+      <div>
+        on
+      </div>
+      <div class="topic-date">
+        {{~format-date topic.created_at format="medium" noTitle="false"~}}
+      </div>
+    </div>
+    {{#unless hideCategory}}
+      {{#unless topic.isPinnedUncategorized}}
+        {{category-link topic.category}}
+      {{/unless}}
+    {{/unless}}
+    {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}
+    {{raw "list/action-list" topic=topic postNumbers=topic.liked_post_numbers className="likes" icon="heart"}}
+  </div>
+  {{#if expandPinned}}
+    {{! raw "list/topic-excerpt" topic=topic}}
+  {{/if}}
+</div>
+
+<div class="topic-meta">
+  <div class="post-count">
+    {{raw "list/posts-count-column" topic=topic}} Replies
+  </div>
+  <div class="num views {{topic.viewsHeat}}">{{number topic.views numberKey="views_long"}} Views</div>
+</div>
+
+<div class="topic-last-poster">
+  <div class="poster-avatar">
+    <a href="/users/{{topic.lastPoster.username}}" data-auto-route="true" data-user-card="{{topic.lastPoster.username}}">
+      {{avatar topic.lastPoster avatarTemplatePath="avatar_template" usernamePath="username" imageSize="40"}}
+    </a>
+  </div>
+
+  <div class="last-poster-meta">
+    <a href="/users/{{topic.lastPoster.username}}" data-auto-route="true" data-user-card="{{topic.lastPoster.username}}">
+      {{topic.lastPoster.username}}
+    </a>
+    {{raw "list/activity-column" topic=topic class="num" tagName="div"}}
+  </div>
+</div>
+
+<div class="topic-likes">
+  <div class="num likes">
+    <a href='{{topic.summaryUrl}}'>
+      {{number topic.op_like_count}}
+    </a>
+  </div>
+</div>

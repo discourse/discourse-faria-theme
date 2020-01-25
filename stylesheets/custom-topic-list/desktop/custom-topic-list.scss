@@ -1,0 +1,143 @@
+.custom-topic-list-label {
+  padding: 0.5em;
+  font-size: $font-up-1;
+  color: white;
+  background: #4b8ffa;
+}
+
+.custom-topic-list-title {
+  padding: 1em;
+  background: #fbfcfe;
+  font-size: $font-down-2;
+  text-transform: uppercase;
+  font-weight: bold;
+  &.pinned {
+    color: #ed9c31;
+  }
+}
+
+.poster-meta {
+  display: flex;
+  align-items: center;
+  font-size: 0.85em;
+  flex: 1 1 100%;
+  margin: 0.15em 0;
+  > div {
+    margin-right: 0.25em;
+  }
+}
+
+.custom-topic-list-header {
+  display: flex;
+  align-items: center;
+  background: white;
+  color: #64758c;
+  font-weight: bold;
+  padding: 1em 0.5em;
+  border-bottom: 1px solid $primary-low;
+
+  .topic-list-header-lable {
+    .label-separator {
+      margin: 0 0.15em;
+    }
+    font-size: $font-down-1;
+    &.topics {
+      flex: 0 1 65%;
+    }
+    &.replies-views {
+      display: flex;
+      justify-content: center;
+      flex: 0 1 15%;
+      .posts,
+      .views {
+        width: auto;
+      }
+    }
+    &.last-post {
+      display: flex;
+      flex: 0 1 15%;
+      padding: 0.75em;
+    }
+  }
+}
+
+.category-meta-wrapper {
+  padding: 1em 0.5em;
+  background: white;
+  font-size: $font-up-1;
+  color: #32384a;
+  .category-name {
+    font-size: $font-up-1;
+    margin-bottom: 0.5em;
+  }
+}
+
+.topic-list-item {
+  background: white;
+  border-top: 1px solid $primary-low;
+  &:last-child {
+    border-bottom: 1px solid $primary-low;
+  }
+  display: flex;
+
+  align-items: center;
+  .views {
+    width: auto;
+  }
+  .topic-meta {
+    display: flex;
+    flex: 0 0 15%;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: $font-down-1;
+  }
+  .topic-likes {
+    justify-content: center;
+    flex: 0 0 5%;
+    .likes {
+      width: auto;
+    }
+  }
+  .main-link {
+    flex: 0 0 65%;
+  }
+
+  .main-link,
+  .topic-meta,
+  .topic-last-poster,
+  .topic-likes {
+    padding: 0.75em;
+    align-self: stretch;
+    border-right: 1px solid $primary-low;
+    box-sizing: border-box;
+  }
+
+  .topic-likes {
+    border-right: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .topic-last-poster {
+    display: flex;
+    flex: 0 0 15%;
+    align-items: center;
+    .poster-avatar {
+      display: flex;
+      align-items: center;
+      margin-right: 0.5em;
+    }
+    .last-poster-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      .age {
+        width: auto;
+        a {
+          padding: 0;
+        }
+      }
+    }
+  }
+}

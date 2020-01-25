@@ -1,2 +1,3 @@
 en:
-  menu: "menu"
+  topic_list:
+    last_post_header: "Last Post"

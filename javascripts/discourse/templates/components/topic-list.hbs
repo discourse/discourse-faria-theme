@@ -1,0 +1,78 @@
+{{#unless skipHeader}}
+  <div class="custom-topic-list-label">
+    Topics
+  </div>
+  {{#if isCategoryList}}
+    <div class="category-meta-wrapper">
+      <div class="category-name">
+        {{category.name}}
+      </div>
+      <div class="category-description">
+        {{category.description}}
+      </div>
+    </div>
+  {{/if}}
+  <div class="custom-topic-list-header">
+    {{raw "topic-list-header"
+      canBulkSelect=canBulkSelect
+      toggleInTitle=toggleInTitle
+      hideCategory=hideCategory
+      showPosters=false
+      showLikes=showLikes
+      showOpLikes=true
+      order=order
+      ascending=ascending
+      sortable=sortable
+      listTitle=listTitle
+      bulkSelectEnabled=bulkSelectEnabled}}
+  </div>
+{{/unless}}
+
+{{! pinned topics go here}}
+{{#if hasPinnedTopics}}
+  <div class="custom-topic-list-pinned">
+    <div class="custom-topic-list-title pinned">
+      Pinned Topics
+    </div>
+    {{#each filteredTopics as |topic|}}
+      {{#if topic.pinned}}
+        {{topic-list-item topic=topic
+                      bulkSelectEnabled=bulkSelectEnabled
+                      showTopicPostBadges=showTopicPostBadges
+                      hideCategory=hideCategory
+                      showPosters=showPosters
+                      showLikes=showLikes
+                      showOpLikes=true
+                      expandGloballyPinned=expandGloballyPinned
+                      expandAllPinned=expandAllPinned
+                      lastVisitedTopic=lastVisitedTopic
+                      selected=selected
+                      tagsForUser=tagsForUser}}
+      {{/if}}
+    {{/each}}
+  </div>
+  <div class="custom-topic-list-title">
+    Topics
+  </div>
+{{/if}}
+
+{{! regular topics go here}}
+<div class="custom-topic-list">
+  {{#each filteredTopics as |topic|}}
+    {{#unless topic.pinned}}
+      {{topic-list-item topic=topic
+                      bulkSelectEnabled=bulkSelectEnabled
+                      showTopicPostBadges=showTopicPostBadges
+                      hideCategory=hideCategory
+                      showPosters=showPosters
+                      showLikes=showLikes
+                      showOpLikes=true
+                      expandGloballyPinned=expandGloballyPinned
+                      expandAllPinned=expandAllPinned
+                      lastVisitedTopic=lastVisitedTopic
+                      selected=selected
+                      tagsForUser=tagsForUser}}
+      {{raw "list/visited-line" lastVisitedTopic=lastVisitedTopic topic=topic}}
+    {{/unless}}
+  {{/each}}
+</div>
