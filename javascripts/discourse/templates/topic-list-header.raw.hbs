@@ -1,0 +1,23 @@
+<div class="topic-list-header-lable topics">
+  Directory
+</div>
+
+{{#if showPosters}}
+  {{raw "topic-list-header-column" order='posters' name='users'}}
+{{/if}}
+
+<div class="topic-list-header-lable replies-views">
+  {{raw "topic-list-header-column" sortable=sortable number='true' order='posts' name='replies'}}
+  <span class="label-separator">/</span>
+  {{raw "topic-list-header-column" sortable=sortable number='true' order='views' name='views'}}
+</div>
+
+<div class="topic-list-header-lable last-post">
+  <span>{{theme-i18n "topic_list.last_post_header"}}</span>
+</div>
+
+<th class="bulk-select">
+  {{#if canBulkSelect}}
+    {{raw "flat-button" class="bulk-select" icon="list" title="topics.bulk.toggle"}}
+  {{/if}}
+</th>
