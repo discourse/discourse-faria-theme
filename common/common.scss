@@ -9,10 +9,14 @@ html {
 
 .custom-top-container {
   display: flex;
+  flex: 1 1 auto;
 }
 
-#main-outlet.wrap {
-  padding: 6em 1em 0;
+#main-outlet {
+  flex: 1 1 auto;
+  &.wrap {
+    padding: 6em 1em 0;
+  }
 }
 
 #main > div {
