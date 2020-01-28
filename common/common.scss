@@ -119,6 +119,7 @@ html {
 }
 
 .custom-sidebar-nav {
+  font-size: $font-down-1;
   padding-top: 4em;
   align-self: stretch;
   min-height: 100vh;
@@ -182,6 +183,7 @@ html {
 ///
 
 .custom-user-sidebar {
+  font-size: $font-down-1;
   padding-top: 6em;
   align-self: stretch;
 }
@@ -189,7 +191,7 @@ html {
 .custom-user-sidebar-content {
   position: sticky;
   top: 6em;
-  width: 290px;
+  width: 275px;
   background: white;
   border: 1px solid $primary-low;
   border-radius: $border-radius;
@@ -263,11 +265,9 @@ html {
         }
 
         .sidebar-stat-count {
-          font-size: $font-up-2;
-        }
-        .sidebar-stat-label {
           font-size: $font-up-1;
         }
+
         div {
           width: 100%;
         }
