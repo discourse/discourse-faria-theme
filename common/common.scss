@@ -186,6 +186,10 @@ html {
   font-size: $font-down-1;
   padding-top: 6em;
   align-self: stretch;
+  .archetype-regular &,
+  .archetype-private_message & {
+    display: none;
+  }
 }
 
 .custom-user-sidebar-content {
