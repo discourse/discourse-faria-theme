@@ -182,6 +182,12 @@ html {
 
 ///
 
+.container > .regular,
+.private_message {
+  background: white;
+  padding: 0 1em;
+}
+
 .custom-user-sidebar {
   font-size: $font-down-1;
   padding-top: 6em;
