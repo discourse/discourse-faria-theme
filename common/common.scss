@@ -21,6 +21,10 @@ html {
   max-width: calc(100vw - 25px);
 }
 
+.list-controls {
+  display: none;
+}
+
 .d-header {
   box-shadow: none;
   .wrap {

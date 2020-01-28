@@ -1,11 +1,12 @@
-{{#if bulkSelectEnabled}}
-  <div class="bulk-select">
-    <input type="checkbox" class="bulk-select">
-  </div>
-{{/if}}
 
-<div class='main-link clearfix'>
-  <span class='link-top-line'>
+
+<td class='main-link clearfix'>
+
+  <span class='link-top-line'>  {{#if bulkSelectEnabled}}
+      <div class="bulk-select">
+        <input type="checkbox" class="bulk-select">
+      </div>
+    {{/if}}
     {{~raw-plugin-outlet name="topic-list-before-status"}}
     {{~raw "topic-status" topic=topic}}
     {{~topic-link topic class="raw-link raw-topic-link"}}
@@ -48,16 +49,20 @@
   {{#if expandPinned}}
     {{! raw "list/topic-excerpt" topic=topic}}
   {{/if}}
+</td>
+
+<td class="topic-meta">
+
+<div class="post-count">
+  <div><span>{{number topic.replyCount noTitle="true"}}</span> Replies</div>
+  <div><span>{{topic.viewsHeat}}{{number topic.views numberKey="views_long"}}</span> Views</div>
 </div>
 
-<div class="topic-meta">
-  <div class="post-count">
-    {{raw "list/posts-count-column" topic=topic}} Replies
-  </div>
-  <div class="num views {{topic.viewsHeat}}">{{number topic.views numberKey="views_long"}} Views</div>
-</div>
 
-<div class="topic-last-poster">
+</td>
+
+<td class="topic-last-poster">
+<div class="last-poster-wrapper">
   <div class="poster-avatar">
     <a href="/users/{{topic.lastPoster.username}}" data-auto-route="true" data-user-card="{{topic.lastPoster.username}}">
       {{avatar topic.lastPoster avatarTemplatePath="avatar_template" usernamePath="username" imageSize="40"}}
@@ -71,11 +76,12 @@
     {{raw "list/activity-column" topic=topic class="num" tagName="div"}}
   </div>
 </div>
+</td>
 
-<div class="topic-likes">
+<td class="topic-likes">
   <div class="num likes">
     <a href='{{topic.summaryUrl}}'>
       {{number topic.op_like_count}}
     </a>
   </div>
-</div>
+</td>

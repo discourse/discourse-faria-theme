@@ -12,12 +12,15 @@
   text-transform: uppercase;
   font-weight: bold;
   &.pinned {
-    color: #ed9c31;
+    td {
+      color: #ed9c31;
+    }
   }
 }
 
 .poster-meta {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   font-size: 0.85em;
   flex: 1 1 100%;
@@ -27,8 +30,26 @@
   }
 }
 
-.custom-topic-list-header {
+.replies-views-wrap,
+.last-poster-wrapper {
   display: flex;
+}
+
+.post-count {
+  color: $primary;
+  font-size: $font-down-1;
+}
+
+.bulk-select {
+  display: inline-block;
+  float: left;
+}
+
+.custom-topic-list-header {
+  th {
+    font-weight: bold;
+  }
+
   align-items: center;
   background: white;
   color: #64758c;
@@ -36,7 +57,13 @@
   padding: 1em 0.5em;
   border-bottom: 1px solid $primary-low;
 
+  tr th {
+    font-weight: bold;
+    color: #64758c;
+  }
+
   .topic-list-header-lable {
+    white-space: nowrap;
     .label-separator {
       margin: 0 0.15em;
     }
@@ -45,7 +72,6 @@
       flex: 0 1 65%;
     }
     &.replies-views {
-      display: flex;
       justify-content: center;
       flex: 0 1 15%;
       .posts,
@@ -54,7 +80,6 @@
       }
     }
     &.last-post {
-      display: flex;
       flex: 0 1 15%;
       padding: 0.75em;
     }
@@ -78,14 +103,12 @@
   &:last-child {
     border-bottom: 1px solid $primary-low;
   }
-  display: flex;
 
   align-items: center;
   .views {
     width: auto;
   }
   .topic-meta {
-    display: flex;
     flex: 0 0 15%;
     justify-content: center;
     flex-direction: column;
@@ -101,6 +124,7 @@
   }
   .main-link {
     flex: 0 0 65%;
+    font-size: $font-0;
   }
 
   .main-link,
@@ -115,14 +139,13 @@
 
   .topic-likes {
     border-right: none;
-    display: flex;
-    align-items: center;
+    font-size: $font-down-1;
   }
 
   .topic-last-poster {
-    display: flex;
     flex: 0 0 15%;
     align-items: center;
+    font-size: $font-down-1;
     .poster-avatar {
       display: flex;
       align-items: center;

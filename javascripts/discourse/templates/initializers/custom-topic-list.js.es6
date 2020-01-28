@@ -29,10 +29,6 @@ export default {
         }.property()
       });
 
-      api.modifyClass("component:topic-list-item", {
-        tagName: "div"
-      });
-
       api.modifyClass("component:topic-list", {
         click(e) {
           var self = this;
