@@ -42,12 +42,25 @@ html {
   }
   .custom-hamburger {
     margin-right: 1.5em;
+    @media screen and (max-width: 900px) {
+      margin-right: 0.5em;
+    }
     button {
       background: transparent;
       margin-left: -6px;
+      white-space: nowrap;
       text-transform: capitalize;
       font-size: $font-up-1;
       color: $primary-high;
+      @media screen and (max-width: 900px) {
+        .d-icon {
+          font-size: $font-up-1;
+          margin: 0;
+        }
+        .d-button-label {
+          display: none;
+        }
+      }
       .d-icon {
         color: $tertiary;
       }
@@ -64,6 +77,15 @@ html {
   .header-username {
     margin-right: 1em;
     padding-top: 0.15em;
+    @media screen and (max-width: 1200px) {
+      max-width: 125px;
+    }
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    @media screen and (max-width: 1000px) {
+      display: none;
+    }
 
     a {
       color: $primary-medium;
@@ -79,6 +101,11 @@ html {
         margin-right: 0.25em;
         flex: 0 1 auto;
         font-size: 1em;
+        @media screen and (max-width: 900px) {
+          width: 32px;
+          height: 32px;
+          margin: 0;
+        }
       }
     }
     #toggle-help-menu:before {
@@ -87,9 +114,12 @@ html {
       display: inline;
       margin-right: 0.25em;
       padding-top: 0.15em;
+      @media screen and (max-width: 900px) {
+        display: none;
+      }
     }
 
-    a {
+    > a {
       color: $primary-medium;
     }
   }
@@ -155,7 +185,9 @@ html {
 
   li {
     list-style-type: none;
-    white-space: nowrap;
+    @media screen and (min-width: 950px) {
+      white-space: nowrap;
+    }
     margin-bottom: 0.25em;
 
     .sidebar-nav-text {
@@ -176,6 +208,7 @@ html {
       display: flex;
       align-items: center;
       padding: 0.25em 1em 0.25em 1em;
+
       &:hover {
         background: #374457;
         color: white;
@@ -196,6 +229,9 @@ html {
   font-size: $font-down-1;
   padding-top: 6em;
   align-self: stretch;
+  @media screen and (max-width: 890px) {
+    display: none;
+  }
   .archetype-regular &,
   .archetype-private_message & {
     display: none;
@@ -204,8 +240,12 @@ html {
 
 .custom-user-sidebar-content {
   position: sticky;
+  overflow: hidden;
   top: 6em;
-  width: 275px;
+  min-width: 150px;
+  @media screen and (min-width: 1200px) {
+    width: 275px;
+  }
   background: white;
   border: 1px solid $primary-low;
   border-radius: $border-radius;
@@ -227,6 +267,15 @@ html {
     a {
       display: block;
       margin: 0 0 0.5em 0;
+      overflow: hidden;
+      @media screen and (max-width: 1100px) {
+        max-width: 200px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      @media screen and (max-width: 1000px) {
+        max-width: 100px;
+      }
     }
     &:last-of-type {
       span,
@@ -270,9 +319,13 @@ html {
       .sidebar-linked-stat {
         display: flex;
         flex: 0 0 50%;
+        @media screen and (max-width: 1300px) {
+          flex: 1 1 auto;
+        }
         flex-wrap: wrap;
         justify-content: center;
         padding: 0.75em 0.25em;
+        overflow: hidden;
 
         &:last-of-type:not(:first-of-type) {
           border-left: 1px solid $primary-low;
@@ -280,6 +333,13 @@ html {
 
         .sidebar-stat-count {
           font-size: $font-up-1;
+        }
+
+        .sidebar-stat-label {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          flex: 1 1 auto;
         }
 
         div {
@@ -295,4 +355,16 @@ html {
       }
     }
   }
+}
+
+// User
+
+.user-main .about .primary {
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.user-content {
+  padding: 1em;
+  box-sizing: border-box;
 }
