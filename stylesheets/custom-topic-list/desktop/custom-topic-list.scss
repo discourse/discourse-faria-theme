@@ -50,6 +50,10 @@
   display: flex;
 }
 
+.replies-views-wrap {
+  justify-content: center;
+}
+
 .post-count {
   color: $primary;
   font-size: $font-down-1;
