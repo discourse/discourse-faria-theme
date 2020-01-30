@@ -39,6 +39,10 @@
             <span>{{bound-date user.created_at}}</span>
           </div>
 
+          <a href="#" class="sidebar-edit-profile">
+              {{d-icon "pencil"}}
+          </a>
+
         </section>
 
         <section class="sidebar-category-stats">
@@ -70,7 +74,7 @@
 
 
 <section class="sidebar-button">
-<a class="btn btn-default" href="/u/{{currentUser.username}}" >My profile </a>
+<a class="btn btn-primary" href="/u/{{currentUser.username}}/summary" >My Profile </a>
 </section>
 
 </div>

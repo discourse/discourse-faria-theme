@@ -7,6 +7,80 @@ html {
   }
 }
 
+.btn {
+  border-radius: $border-radius;
+  border: 1px solid transparent;
+  .discourse-no-touch & {
+    &:hover {
+      background: $primary-low;
+      color: $primary-high;
+      .d-icon {
+        color: $primary-high;
+      }
+    }
+  }
+}
+
+.btn-default {
+  background: linear-gradient(180deg, $primary-very-low 0%, $primary-low 100%);
+  border-color: $primary-low;
+
+  .discourse-no-touch & {
+    &:hover {
+      color: $primary;
+      border-color: $primary-low;
+
+      .d-icon {
+        color: $primary-high;
+      }
+      background: linear-gradient(
+        180deg,
+        $primary-low 0%,
+        $primary-very-low 100%
+      );
+    }
+  }
+}
+
+.btn-primary {
+  background: linear-gradient(
+    180deg,
+    rgba(75, 143, 250, 1) 0%,
+    rgba(75, 83, 250, 1) 100%
+  );
+  border-color: #4b53fa;
+  .discourse-no-touch & {
+    &:hover {
+      color: $secondary;
+      background: linear-gradient(
+        180deg,
+        rgba(75, 143, 250, 1) 100%,
+        rgba(75, 83, 250, 1) 0%
+      );
+      .d-icon {
+        color: $secondary;
+      }
+      border-color: #4b8ffa;
+    }
+  }
+}
+
+.d-editor-button-bar {
+  .btn-default {
+    background: transparent;
+    .discourse-no-touch & {
+      &:hover {
+        background: $primary-low;
+      }
+    }
+  }
+}
+
+.nav-pills > li > a:hover,
+.nav-pills > li a.active {
+  border-radius: $border-radius;
+}
+
 .custom-top-container {
   display: flex;
   flex: 1 1 auto;
@@ -29,10 +103,64 @@ html {
   display: none;
 }
 
+.drop-down-mode .d-header-icons .active .icon::after {
+  border-width: 2px;
+}
+
 .d-header {
   box-shadow: none;
   .wrap {
     max-width: unset;
+  }
+  .d-header-icons {
+    li {
+      padding: 0 0.15em 0;
+    }
+    .current-user {
+      display: flex;
+      align-items: center;
+      border: 1px solid transparent;
+      &:hover {
+        background: $primary-low;
+      }
+      &.active {
+        border: 1px solid $primary-low;
+        border-bottom: none;
+        &:hover {
+          background: $secondary;
+        }
+        a.icon {
+          border: none;
+        }
+        .header-username:after {
+          display: block;
+
+          position: absolute;
+
+          top: 100%;
+
+          left: 0;
+
+          z-index: 1001;
+
+          width: 100%;
+
+          height: 0;
+
+          content: "";
+
+          border-top: 1px solid #fff;
+        }
+      }
+      a.icon {
+        border: none;
+        &:hover,
+        &:focus {
+          border: none;
+          background: transparent;
+        }
+      }
+    }
   }
   &.header-search-enabled .title {
     width: 100%;
@@ -75,7 +203,7 @@ html {
     align-items: center;
   }
   .header-username {
-    margin-right: 1em;
+    margin-right: 0.25em;
     padding-top: 0.15em;
     @media screen and (max-width: 1200px) {
       max-width: 125px;
@@ -168,7 +296,7 @@ html {
   h3 {
     text-transform: uppercase;
     font-size: $font-down-2;
-    color: #849dbc;
+    color: darken(#849dbc, 10%);
     padding: 0 1em;
     margin-bottom: 1em;
     &:not(:first-of-type) {
@@ -188,7 +316,7 @@ html {
     @media screen and (min-width: 950px) {
       white-space: nowrap;
     }
-    margin-bottom: 0.25em;
+    margin-bottom: 0;
 
     .sidebar-nav-text {
       body.collapse-sidebar & {
@@ -207,7 +335,7 @@ html {
       color: #849dbc;
       display: flex;
       align-items: center;
-      padding: 0.25em 1em 0.25em 1em;
+      padding: 0.4em 1em;
 
       &:hover {
         background: #374457;
@@ -235,6 +363,15 @@ html {
   .archetype-regular &,
   .archetype-private_message & {
     display: none;
+  }
+}
+
+.sidebar-personal-stats {
+  position: relative;
+  .sidebar-edit-profile {
+    position: absolute;
+    right: 1.25em;
+    top: 1.25em;
   }
 }
 
@@ -351,7 +488,7 @@ html {
     &.sidebar-button {
       .btn {
         width: 100%;
-        padding: 10px 6px 8px;
+        padding: 11px 6px 11px;
       }
     }
   }
@@ -367,4 +504,16 @@ html {
 .user-content {
   padding: 1em;
   box-sizing: border-box;
+}
+
+// Categories
+
+.navigation-categories {
+  .list-header {
+    display: none;
+  }
+  .list-container {
+    background: $secondary;
+    padding: 0.5em 1em 0;
+  }
 }

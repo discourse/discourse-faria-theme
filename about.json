@@ -2,8 +2,19 @@
   "name": "discourse-faria-theme",
   "about_url": null,
   "license_url": null,
-  "assets": {
-  },
+  "assets": {},
   "color_schemes": {
+    "Faria": {
+      "primary": "222222",
+      "secondary": "ffffff",
+      "tertiary": "4b8ffa",
+      "quaternary": "4b8ffa",
+      "header_background": "ffffff",
+      "header_primary": "333333",
+      "highlight": "ffff4d",
+      "danger": "e45735",
+      "success": "009900",
+      "love": "fa6c8d"
+    }
   }
 }

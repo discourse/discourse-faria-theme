@@ -2,3 +2,59 @@ svg_icons:
   default: "comments|file|life-ring|layer-group|clipboard|hdd|map|chart-line|clock|road|rss-square"
   type: "list"
   list_type: "compact"
+
+sidebar_forum_link:
+  default: "/"
+  type: "string"
+
+sidebar_myposts_link:
+  default: "/my/activity"
+  type: "string"
+
+sidebar_categories_link:
+  default: "/categories"
+  type: "string"
+
+sidebar_activity_link:
+  default: "/my/activity"
+  type: "string"
+
+sidebar_faq_link:
+  default: "/faq"
+  type: "string"
+
+sidebar_dpassessment_link:
+  default: "/"
+  type: "string"
+
+sidebar_deadlines_link:
+  default: "/"
+  type: "string"
+
+sidebar_examcalendar_link:
+  default: "/"
+  type: "string"
+
+sidebar_resources_link:
+  default: "/"
+  type: "string"
+
+sidebar_curriculum_link:
+  default: "/"
+  type: "string"
+
+sidebar_international_link:
+  default: "/"
+  type: "string"
+
+sidebar_roadmap_link:
+  default: "/"
+  type: "string"
+
+sidebar_blog_link:
+  default: "/"
+  type: "string"
+
+sidebar_profile_link:
+  default: "/"
+  type: "string"

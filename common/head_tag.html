@@ -13,14 +13,13 @@
          let currentUser = api.getCurrentUser();
 
          if (currentUser) {
-           return h('a', {href: "/u/" + currentUser.username + "/summary"},
-             [h('span', currentUser.username)]
-           )
+           return h('span', currentUser.username)
+
          }
          }
     });
 
-    api.decorateWidget('header-icons:after', (helper)=>{
+    api.decorateWidget('user-dropdown:after', (helper)=>{
      const showExtraInfo = helper.attrs.topic;
      if(!showExtraInfo) {
          return [helper.widget.attach('header-username')];
@@ -111,4 +110,41 @@
     api.attachWidgetAction('header', 'toggleHelp', function() {
       this.state.helpVisible = !this.state.helpVisible;
     });
+</script>
+
+<script type="text/discourse-plugin" version="0.8">
+  api.modifyClass('component:topic-navigation', {
+    _performCheckSize() {
+        if (!this.element || this.isDestroying || this.isDestroyed) {
+          return;
+        }
+
+        let info = this.info;
+
+        if (info.get("topicProgressExpanded")) {
+          info.setProperties({
+            renderTimeline: true,
+            renderAdminMenuButton: true
+          });
+        } else {
+          let renderTimeline = !this.site.mobileView;
+
+          if (renderTimeline) {
+            const width = $(window).width();
+            let height = $(window).height();
+
+            if (this.composerOpen) {
+              height -= $("#reply-control").height();
+            }
+
+            renderTimeline = width > 1224 && height > 520;
+          }
+
+          info.setProperties({
+            renderTimeline,
+            renderAdminMenuButton: !renderTimeline
+          });
+        }
+      },
+  });
 </script>
