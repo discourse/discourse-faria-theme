@@ -3,6 +3,21 @@
   font-size: $font-up-2;
   color: white;
   background: #4b8ffa;
+  display: flex;
+  align-items: center;
+  span {
+    padding-top: 0.15em;
+  }
+  a {
+    padding-right: 0.5em;
+    border-right: 1px solid $primary;
+    display: inline-flex;
+    align-items: center;
+    margin-right: 0.5em;
+    .d-icon {
+      color: $secondary;
+    }
+  }
 }
 
 .custom-topic-list-title {
@@ -69,11 +84,10 @@
     }
     font-size: $font-down-1;
     &.topics {
-      flex: 0 1 65%;
     }
     &.replies-views {
-      justify-content: center;
-      flex: 0 1 15%;
+      text-align: center;
+
       .posts,
       .views {
         width: auto;

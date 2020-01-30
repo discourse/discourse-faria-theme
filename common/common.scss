@@ -89,7 +89,7 @@ html {
 #main-outlet {
   flex: 1 1 auto;
   &.wrap {
-    padding: 6em 1em 0;
+    padding: 5.4em 1em 0;
   }
 }
 
@@ -530,7 +530,7 @@ html {
   }
 
   #list-area {
-    margin-bottom: 2em;
+    margin-bottom: 0;
   }
 }
 
@@ -561,4 +561,27 @@ html {
 
 .fixed-modal {
   left: 0;
+}
+
+// Breadcrumb
+
+.custom-breadcrumbs {
+  color: $primary-high;
+  margin-bottom: 1em;
+  font-size: $font-down-1;
+}
+
+// Topic
+
+#topic-title > .container {
+  display: flex;
+  flex-direction: column;
+  .title-wrapper {
+    margin: 0.5em 0;
+  }
+  > span {
+    order: -1;
+    background: #eff6ff;
+    margin: -1em -1em 1em -1em;
+  }
 }
