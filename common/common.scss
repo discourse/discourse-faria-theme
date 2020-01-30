@@ -170,6 +170,9 @@ html {
   }
   .custom-hamburger {
     margin-right: 1.5em;
+    .anon & {
+      display: none;
+    }
     @media screen and (max-width: 900px) {
       margin-right: 0.5em;
     }
@@ -286,6 +289,9 @@ html {
   align-self: stretch;
   min-height: 100vh;
   background: #293042;
+  .anon & {
+    display: none;
+  }
 }
 
 .custom-sidebar-nav-contents {
