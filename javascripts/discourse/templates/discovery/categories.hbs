@@ -1,0 +1,10 @@
+
+{{#discovery-categories refresh=(action "refresh")}}
+<div class="custom-topic-list-label">
+  Forums
+</div>
+  {{component categoryPageStyle
+              categories=model.categories
+              latestTopicOnly=latestTopicOnly
+              topics=model.topics}}
+{{/discovery-categories}}

@@ -109,6 +109,16 @@ html {
 
 .d-header {
   box-shadow: none;
+
+  .title a {
+    color: $primary-medium;
+  }
+
+  .site-text-logo {
+    font-weight: normal;
+    font-size: $font-up-1;
+  }
+
   .wrap {
     max-width: unset;
   }
@@ -134,21 +144,13 @@ html {
         }
         .header-username:after {
           display: block;
-
           position: absolute;
-
           top: 100%;
-
           left: 0;
-
           z-index: 1001;
-
           width: 100%;
-
           height: 0;
-
           content: "";
-
           border-top: 1px solid #fff;
         }
       }
@@ -182,7 +184,7 @@ html {
       white-space: nowrap;
       text-transform: capitalize;
       font-size: $font-up-1;
-      color: $primary-high;
+      color: $primary-medium;
       @media screen and (max-width: 900px) {
         .d-icon {
           font-size: $font-up-1;
@@ -218,9 +220,7 @@ html {
       display: none;
     }
 
-    a {
-      color: $primary-medium;
-    }
+    color: $primary-medium;
   }
 
   .header-dropdown-toggle {
@@ -252,6 +252,12 @@ html {
 
     > a {
       color: $primary-medium;
+    }
+  }
+
+  .search-menu.search-header {
+    .anon & {
+      display: none;
     }
   }
 
@@ -520,6 +526,39 @@ html {
   }
   .list-container {
     background: $secondary;
-    padding: 0.5em 1em 0;
+    padding: 0;
   }
+
+  #list-area {
+    margin-bottom: 2em;
+  }
+}
+
+.category-list {
+  margin: 1em 0;
+  tbody {
+    border-top-width: 1px;
+    .category {
+      border-left: none;
+    }
+  }
+  td:first-of-type,
+  .topics {
+    padding: 1em;
+  }
+  td.topics {
+    border-left: 1px solid $primary-low;
+  }
+  .topics {
+    text-align: center;
+  }
+  th {
+    padding: 0 1em;
+  }
+}
+
+// Modal
+
+.fixed-modal {
+  left: 0;
 }
