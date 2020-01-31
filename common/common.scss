@@ -278,7 +278,6 @@ html {
       content: "Help & Support";
       display: inline;
       margin-right: 0.25em;
-      padding-top: 0.15em;
       @media screen and (max-width: 900px) {
         display: none;
       }
@@ -377,7 +376,8 @@ html {
       }
     }
 
-    a {
+    a,
+    a.widget-link {
       color: #849dbc;
       display: flex;
       align-items: center;
@@ -668,4 +668,17 @@ a.text-logo-wrapper {
 .extra-info-wrapper .topic-link {
   font-weight: normal;
   color: $primary-medium;
+}
+
+.body-page {
+  box-sizing: border-box;
+  background: $secondary;
+  padding: 1em;
+  max-width: unset;
+}
+
+.admin-interface {
+  .below-site-everything-outlet {
+    display: none;
+  }
 }
