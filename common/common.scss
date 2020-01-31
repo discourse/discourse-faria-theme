@@ -640,7 +640,7 @@ html {
   display: flex;
   align-items: center;
   .d-icon {
-    font-size: $font-0 !important;
+    font-size: $font-up-1 !important;
     margin-right: 0.25em;
     color: $tertiary;
   }
@@ -652,10 +652,14 @@ html {
 .d-header {
   .d-icon-home {
     color: $tertiary;
-    font-size: $font-up-3;
+    font-size: $font-up-1;
   }
 }
 
 .d-header .extra-info:not(.two-rows) {
   min-height: unset;
+}
+
+.extra-info-wrapper .header-title {
+  margin-bottom: -2px;
 }
