@@ -22,3 +22,11 @@ article > .row {
   display: flex;
   width: 100%;
 }
+
+.extra-info-wrapper .header-title {
+  margin-bottom: 0;
+}
+
+.extra-info-wrapper .topic-link {
+  font-size: $font-down-2;
+}

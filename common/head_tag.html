@@ -68,6 +68,48 @@
   api.attachWidgetAction('header', 'toggleHelp', function() {
     this.state.helpVisible = !this.state.helpVisible;
   });
+
+
+  api.reopenWidget("home-logo", {
+    logo() {
+      const { siteSettings } = this;
+      const mobileView = this.site.mobileView;
+
+      const mobileLogoUrl = this.mobileLogoUrl();
+      const showMobileLogo = mobileView && mobileLogoUrl.length > 0;
+
+      const logoUrl = this.logoUrl();
+      const title = siteSettings.title;
+
+      if (this.attrs.minimized) {
+        const logoSmallUrl = this.smallLogoUrl();
+        if (logoSmallUrl.length) {
+          return h("img#site-logo.logo-small", {
+            key: "logo-small",
+            attributes: {
+              src: Discourse.getURL(logoSmallUrl),
+              width: 36,
+              alt: title
+            }
+          });
+        } else {
+          return iconNode("home");
+        }
+      } else if (showMobileLogo) {
+        return h("img#site-logo.logo-big", {
+          key: "logo-mobile",
+          attributes: { src: Discourse.getURL(mobileLogoUrl), alt: title }
+        });
+      } else if (logoUrl.length) {
+        return h("img#site-logo.logo-big", {
+          key: "logo-big",
+          attributes: { src: Discourse.getURL(logoUrl), alt: title }
+        });
+      } else {
+        return h( 'span.text-logo-wrapper', [ h('span', iconNode("home")), h("h1#site-text-logo.text-logo", { key: "logo-text" }, title)]);
+      }
+    },
+  });
 </script>
 
 <script type="text/discourse-plugin" version="0.8">
