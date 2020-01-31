@@ -2,7 +2,7 @@ import { createWidget } from "discourse/widgets/widget";
 import hbs from "discourse/widgets/hbs-compiler";
 import { withPluginApi } from "discourse/lib/plugin-api";
 createWidget("nav-menu", {
-  tagName: "div.nav-panel",
+  tagName: "div.nav-panel.hamburger-panel",
 
   panelContents() {
     return this.attach("mobile-sidebar-nav");
