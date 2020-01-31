@@ -30,3 +30,10 @@ article > .row {
 .extra-info-wrapper .topic-link {
   font-size: $font-down-2;
 }
+
+.archetype-regular,
+.archetype-private_message {
+  .custom-top-container {
+    overflow: hidden;
+  }
+}
