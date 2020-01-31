@@ -2,7 +2,13 @@
   "name": "discourse-faria-theme",
   "about_url": null,
   "license_url": null,
-  "assets": {},
+  "assets": {
+    "icons-sprite": "/assets/sprite.svg",
+    "open-sans": "/assets/OpenSans-Regular.ttf",
+    "open-sans-bold": "/assets/OpenSans-Bold.ttf",
+    "open-sans-italic": "/assets/OpenSans-Italic.ttf",
+    "open-sans-semibold": "/assets/OpenSans-SemiBold.ttf"
+  },
   "color_schemes": {
     "Faria": {
       "primary": "222222",
