@@ -657,7 +657,7 @@ a.text-logo-wrapper {
 }
 
 .d-header .extra-info:not(.two-rows) {
-  min-height: unset;
+  min-height: unset !important;
 }
 
 .extra-info-wrapper .header-title {
