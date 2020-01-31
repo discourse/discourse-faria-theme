@@ -1,7 +1,181 @@
+body {
+  background: #eff6ff;
+}
+
+#main-outlet {
+  &.wrap {
+    padding: 4.5em 0.5em 0;
+  }
+}
+
 .above-site-header-outlet {
   display: none;
 }
 
 .custom-top-container {
   overflow: hidden;
+}
+
+.topic-list {
+  background: white;
+}
+
+.topic-list-item td:first-child,
+.topic-post {
+  padding: 0 0.5em;
+}
+
+.custom-topic-list,
+.custom-topic-list-pinned {
+  .topic-list-item td:first-child,
+  .topic-post {
+    padding: 1em 0.5em;
+  }
+}
+
+#topic-title > .container > span {
+  margin: -0.5em -0.5em 1em;
+}
+#topic-title > .container,
+.container.posts {
+  background: white;
+}
+
+#topic-title {
+  padding-bottom: 0;
+  > .container {
+    padding: 0.5em;
+  }
+}
+
+.gap {
+  padding: 0.5em;
+}
+
+.small-action {
+  margin: 0 0.5em;
+}
+
+.lightbox-wrapper,
+.lightbox-wrapper * {
+  width: 100%;
+}
+.suggested-topics-message {
+  padding: 0.5em 0;
+}
+
+#topic-footer-buttons {
+  padding: 0.5em;
+}
+
+.custom-topic-list-label {
+  padding: 0.5em;
+}
+
+.suggested-topics {
+  padding: 0.5em;
+  .topic-list-item td:first-child,
+  .topic-post {
+    padding: 1em 0.5em;
+  }
+}
+
+.title .header-dropdown-toggle {
+  padding: 0.5em;
+  margin-left: -0.5em;
+  margin-right: 0.5em;
+  .d-icon {
+    font-size: $font-up-2;
+  }
+}
+
+.d-header-icons {
+  li:nth-of-type(2) {
+    display: none;
+  }
+}
+
+.nav-panel .menu-panel {
+  background: #293042;
+  border: none;
+}
+
+.custom-topic-list-title {
+  &.pinned {
+    td {
+      color: #ed9c31;
+    }
+  }
+  td {
+    padding: 0.5em;
+    font-weight: bold;
+  }
+}
+
+#banner {
+  margin: 0.5em 0;
+}
+
+tbody {
+  border-top-width: 1px;
+}
+
+.panel .header-dropdown-toggle {
+  min-width: 40px;
+}
+
+.d-header-icons .d-icon {
+  font-size: 1.5em;
+}
+.d-header-icons .icon img.avatar,
+.d-header .header-dropdown-toggle #toggle-help-menu .d-icon {
+  width: 25px;
+  height: 25px;
+}
+
+.search-container {
+  background: white;
+  padding: 1em 0.5em 0 0.5em;
+}
+
+.alert.alert-info {
+  margin-bottom: 1em;
+}
+
+.extra-info-wrapper {
+  margin-left: 0.25em;
+}
+
+.d-header .extra-info-wrapper .extra-info .header-title {
+  margin-bottom: 0.1em;
+}
+
+.categories-list .category-list {
+  padding: 0 0.5em;
+}
+
+.topic-list th,
+.topic-list td {
+  max-width: 250px;
+}
+.topic-admin-popup-menu {
+  box-sizing: border-box;
+  padding: 0.5em;
+}
+
+.custom-sidebar-nav-contents {
+  padding-top: 1em;
+}
+
+.d-header .title {
+  flex: 0 0 auto;
+}
+.category-meta-wrapper {
+  padding: 1em 0.5em;
+  background: white;
+}
+
+.category-name {
+  font-size: $font-up-2;
+  margin-bottom: 0.7em;
 }

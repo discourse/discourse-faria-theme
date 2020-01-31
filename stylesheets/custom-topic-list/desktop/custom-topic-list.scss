@@ -1,25 +1,3 @@
-.custom-topic-list-label {
-  padding: 0.75em;
-  font-size: $font-up-2;
-  color: white;
-  background: #4b8ffa;
-  display: flex;
-  align-items: center;
-  span {
-    padding-top: 0.15em;
-  }
-  a {
-    padding-right: 0.5em;
-    border-right: 1px solid $primary;
-    display: inline-flex;
-    align-items: center;
-    margin-right: 0.5em;
-    .d-icon {
-      color: $secondary;
-    }
-  }
-}
-
 .custom-topic-list-title {
   padding: 1em;
   background: #fbfcfe;
