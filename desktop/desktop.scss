@@ -1,1 +1,24 @@
 @import "/custom-topic-list/desktop/custom-topic-list";
+
+#main > div {
+  max-width: calc(100vw - 25px);
+}
+
+.container > .regular,
+.private_message {
+  background: white;
+  padding: 0 1em;
+}
+
+.topic-area {
+  width: calc(100% - 1em);
+}
+
+.topic-avatar {
+  align-self: flex-start;
+}
+
+article > .row {
+  display: flex;
+  width: 100%;
+}

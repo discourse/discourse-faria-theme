@@ -1,0 +1,46 @@
+<script type="text/discourse-plugin" version="0.8">
+
+  // Custom side menu
+
+    api.createWidget("custom-hamburger", {
+       tagName: "span.custom-hamburger",
+       buildKey: attrs => `custom-hamburger`,
+
+      html() {
+        if (localStorage.getItem('sidebar') === 'hide') {
+          document.querySelector("body").classList.add("collapse-sidebar")
+        } else {
+          document.querySelector("body").classList.remove("collapse-sidebar")
+        }
+      },
+
+      toggleSideMenu() {
+        if (localStorage.getItem('sidebar') === 'hide') {
+         localStorage.setItem('sidebar', 'show')
+        } else {
+         localStorage.setItem('sidebar', 'hide')
+        }
+      }
+    });
+
+
+
+    api.decorateWidget('custom-hamburger:after', function(helper) {
+      let contents = [];
+  I18n.translations.en.js.custom_translation = I18n.t(themePrefix("menu"));
+      contents.push(helper.attach('button', {
+        title: 'help-menu',
+        icon: 'bars',
+        label: "custom_translation",
+        iconId: 'toggle-side-menu',
+        action: 'toggleSideMenu',
+      }));
+
+      return contents;
+    });
+
+    api.decorateWidget('home-logo:before', (helper)=>{
+     const showExtraInfo = helper.attrs.topic;
+         return [helper.widget.attach('custom-hamburger')];
+    });
+</script>

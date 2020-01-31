@@ -1,0 +1,28 @@
+<script type="text/discourse-plugin" version="0.8">
+
+  // Custom help menu
+
+
+  api.decorateWidget('home-logo:before', function(helper) {
+    const headerState = helper.widget.parentWidget.state;
+    let contents = [];
+
+      contents.push(helper.attach('header-dropdown', {
+        title: 'nav-menu',
+        icon: 'bars',
+        active: headerState.navVisible,
+        iconId: 'toggle-nav-menu',
+        action: 'toggleNav',
+      }));
+
+      return contents;
+  });
+
+  api.addHeaderPanel('nav-menu', 'navVisible', function(attrs, state) {
+           return {};
+         });
+
+  api.attachWidgetAction('header', 'toggleNav', function() {
+    this.state.navVisible = !this.state.navVisible;
+  });
+</script>

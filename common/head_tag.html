@@ -1,115 +1,73 @@
 <script type="text/discourse-plugin" version="0.8">
-    const { iconNode } = require("discourse-common/lib/icon-library");
+  const { iconNode } = require("discourse-common/lib/icon-library");
 
-    // Add username to header
+  // Add username to header
 
-    var h = require('virtual-dom').h;
+  var h = require('virtual-dom').h;
 
-    api.createWidget("header-username", {
-       tagName: "span.header-username",
-       buildKey: attrs => `header-username`,
+  api.createWidget("header-username", {
+     tagName: "span.header-username",
+     buildKey: attrs => `header-username`,
 
-       html(attrs, state){
-         let currentUser = api.getCurrentUser();
+     html(attrs, state){
+       let currentUser = api.getCurrentUser();
 
-         if (currentUser) {
-           return h('span', currentUser.username)
+       if (currentUser) {
+         return h('span', currentUser.username)
 
-         }
-         }
-    });
-
-    api.decorateWidget('user-dropdown:after', (helper)=>{
-     const showExtraInfo = helper.attrs.topic;
-     if(!showExtraInfo) {
-         return [helper.widget.attach('header-username')];
        }
-    });
+       }
+  });
 
-    // Custom side menu
+  api.decorateWidget('user-dropdown:after', (helper)=>{
+   const showExtraInfo = helper.attrs.topic;
+   if(!showExtraInfo) {
+       return [helper.widget.attach('header-username')];
+     }
+  });
 
-    api.createWidget("custom-hamburger", {
-       tagName: "span.custom-hamburger",
-       buildKey: attrs => `custom-hamburger`,
+  // Custom help menu
 
-      html() {
-        if (localStorage.getItem('sidebar') === 'hide') {
-          document.querySelector("body").classList.add("collapse-sidebar")
-        } else {
-          document.querySelector("body").classList.remove("collapse-sidebar")
-        }
-      },
+  api.createWidget('help-menu', {
+    tagName: 'div.help-panel',
 
-      toggleSideMenu() {
-        if (localStorage.getItem('sidebar') === 'hide') {
-         localStorage.setItem('sidebar', 'show')
-        } else {
-         localStorage.setItem('sidebar', 'hide')
-        }
-      }
-    });
+    panelContents() {
+      return "Help menu contents here";
+    },
 
+    html() {
+      return this.attach('menu-panel', {
+        contents: () => this.panelContents()
+      });
+    },
 
+    clickOutside() {
+      this.sendWidgetAction('toggleHelp');
+    }
+  });
 
-    api.decorateWidget('custom-hamburger:after', function(helper) {
-      let contents = [];
-  I18n.translations.en.js.custom_translation = I18n.t(themePrefix("menu"));
-      contents.push(helper.attach('button', {
+  api.decorateWidget('header-icons:after', function(helper) {
+    const headerState = helper.widget.parentWidget.state;
+    let contents = [];
+
+      contents.push(helper.attach('header-dropdown', {
         title: 'help-menu',
-        icon: 'bars',
-        label: "custom_translation",
-        iconId: 'toggle-side-menu',
-        action: 'toggleSideMenu',
+        icon: 'life-ring',
+        active: headerState.helpVisible,
+        iconId: 'toggle-help-menu',
+        action: 'toggleHelp',
       }));
 
       return contents;
-    });
+  });
 
-    api.decorateWidget('home-logo:before', (helper)=>{
-     const showExtraInfo = helper.attrs.topic;
-         return [helper.widget.attach('custom-hamburger')];
-    });
+  api.addHeaderPanel('help-menu', 'helpVisible', function(attrs, state) {
+           return {};
+         });
 
-    // Custom help menu
-
-    api.createWidget('help-menu', {
-      tagName: 'div.help-panel',
-
-      panelContents() {
-        return "Help menu contents here";
-      },
-
-      html() {
-        return this.attach('menu-panel', {
-          contents: () => this.panelContents()
-        });
-      },
-
-      clickOutside() {
-        this.sendWidgetAction('toggleHelp');
-      }
-    });
-
-    api.decorateWidget('header-icons:after', function(helper) {
-      const headerState = helper.widget.parentWidget.state;
-      let contents = [];
-
-        contents.push(helper.attach('header-dropdown', {
-          title: 'help-menu',
-          icon: 'life-ring',
-          active: headerState.helpVisible,
-          iconId: 'toggle-help-menu',
-          action: 'toggleHelp',
-        }));
-        if (headerState.helpVisible) {
-          contents.push(helper.attach('help-menu'));
-        }
-        return contents;
-    });
-
-    api.attachWidgetAction('header', 'toggleHelp', function() {
-      this.state.helpVisible = !this.state.helpVisible;
-    });
+  api.attachWidgetAction('header', 'toggleHelp', function() {
+    this.state.helpVisible = !this.state.helpVisible;
+  });
 </script>
 
 <script type="text/discourse-plugin" version="0.8">

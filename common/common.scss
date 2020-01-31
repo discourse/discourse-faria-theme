@@ -7,6 +7,11 @@ html {
   }
 }
 
+.alert.alert-info {
+  background: white;
+  padding: 1em;
+}
+
 .btn {
   border-radius: $border-radius;
   border: 1px solid transparent;
@@ -84,11 +89,14 @@ html {
 .custom-top-container {
   display: flex;
   flex: 1 1 auto;
+  overflow: hidden;
 }
 
 #main-outlet {
   flex: 1 1 auto;
   &.wrap {
+    width: 100%;
+    box-sizing: border-box;
     padding: 5.4em 1em 0;
   }
 }
@@ -96,7 +104,6 @@ html {
 #main > div {
   display: flex;
   box-sizing: border-box;
-  max-width: calc(100vw - 25px);
 }
 
 .list-controls {
@@ -110,13 +117,17 @@ html {
 .d-header {
   box-shadow: none;
 
-  .title a {
-    color: $primary-medium;
+  .title {
+    a,
+    a:visited {
+      color: $primary-medium;
+    }
   }
 
   #site-text-logo {
     font-weight: normal;
     font-size: $font-up-1;
+    color: $primary-medium;
   }
 
   .wrap {
@@ -359,12 +370,6 @@ html {
 
 ///
 
-.container > .regular,
-.private_message {
-  background: white;
-  padding: 0 1em;
-}
-
 .custom-user-sidebar {
   font-size: $font-down-1;
   padding-top: 6em;
@@ -583,5 +588,29 @@ html {
     order: -1;
     background: #eff6ff;
     margin: -1em -1em 1em -1em;
+  }
+}
+
+//
+
+.custom-topic-list-label {
+  padding: 0.75em;
+  font-size: $font-up-2;
+  color: white;
+  background: #4b8ffa;
+  display: flex;
+  align-items: center;
+  span {
+    padding-top: 0.15em;
+  }
+  a {
+    padding-right: 0.5em;
+    border-right: 1px solid $primary;
+    display: inline-flex;
+    align-items: center;
+    margin-right: 0.5em;
+    .d-icon {
+      color: $secondary;
+    }
   }
 }
