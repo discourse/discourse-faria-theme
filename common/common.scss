@@ -682,3 +682,23 @@ a.text-logo-wrapper {
     display: none;
   }
 }
+
+.groups-page {
+  .below-site-everything-outlet {
+    display: none;
+  }
+  #main-outlet > .container {
+    background: $secondary;
+    padding: 1em;
+  }
+}
+
+.users-page {
+  .below-site-everything-outlet {
+    display: none;
+  }
+  #main-outlet > .container {
+    background: $secondary;
+    padding: 1em;
+  }
+}
