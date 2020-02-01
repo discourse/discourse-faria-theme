@@ -183,3 +183,11 @@ tbody {
   color: $tertiary;
   font-weight: 500;
 }
+
+.d-header .title {
+  @media screen and (max-width: 450px) {
+    .text-logo-wrapper {
+      font-size: 0.9em;
+    }
+  }
+}
