@@ -1,5 +1,15 @@
 @import "/custom-topic-list/desktop/custom-topic-list";
 
+.below-site-everything-outlet {
+  display: none;
+  .navigation-topics &,
+  .categories-list &,
+  .about-page &,
+  body[class*="static-"] & {
+    display: block;
+  }
+}
+
 #main > div {
   max-width: calc(100vw - 25px);
 }
@@ -35,5 +45,17 @@ article > .row {
 .archetype-private_message {
   .custom-top-container {
     overflow: hidden;
+  }
+}
+
+.user-summary-page,
+.user-activity-page,
+.user-notifications-page,
+.user-messages-page,
+.user-invites-page,
+.user-badges-page,
+.user-preferences-page {
+  .below-site-everything-outlet {
+    display: none;
   }
 }
