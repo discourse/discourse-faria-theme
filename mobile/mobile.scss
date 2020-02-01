@@ -184,10 +184,16 @@ tbody {
   font-weight: 500;
 }
 
-.d-header .title {
+.d-header {
   @media screen and (max-width: 450px) {
-    .text-logo-wrapper {
-      font-size: 0.9em;
+    .title .text-logo-wrapper {
+      font-size: 0.8em;
+    }
+    .panel .header-dropdown-toggle {
+      min-width: unset;
+    }
+    .d-header-icons .icon {
+      padding: 0;
     }
   }
 }
