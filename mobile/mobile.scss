@@ -178,3 +178,8 @@ tbody {
 .title-wrapper .topic-statuses {
   line-height: 1.4;
 }
+
+.topic-list .main-link a.title {
+  color: $tertiary;
+  font-weight: 500;
+}
