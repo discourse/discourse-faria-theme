@@ -1,9 +1,12 @@
 .custom-topic-list-title {
   padding: 1em;
   background: #fbfcfe;
-  font-size: $font-down-2;
+  font-size: 0.8em;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: normal;
+  td {
+    color: $primary;
+  }
   &.pinned {
     td {
       color: #ed9c31;
@@ -21,7 +24,7 @@
     margin-right: 0.25em;
   }
   .poster-name {
-    font-weight: bold;
+    font-weight: normal;
     a {
       color: $primary;
     }
@@ -39,10 +42,11 @@
 
 .post-count {
   color: $primary;
-  font-size: $font-0;
+  font-size: 0.92em;
   div:last-of-type:not(:first-of-type) {
-    color: $primary-medium;
-    font-size: $font-down-1;
+    color: #5b6c86;
+    font-size: 0.92em;
+    margin-top: 2px;
   }
 }
 
@@ -53,7 +57,7 @@
 
 .custom-topic-list-header {
   th {
-    font-weight: bold;
+    font-weight: normal;
   }
 
   align-items: center;
@@ -64,16 +68,17 @@
   border-bottom: 1px solid $primary-low;
 
   tr th {
-    font-weight: bold;
-    color: #64758c;
+    font-weight: normal;
+    color: #5b6c86;
   }
 
   .topic-list-header-lable {
     white-space: nowrap;
+    font-size: 0.8em;
+
     .label-separator {
       margin: 0 0.15em;
     }
-    font-size: $font-down-1;
     &.topics {
     }
     &.replies-views {
@@ -92,9 +97,9 @@
 }
 
 .category-meta-wrapper {
-  padding: 1em 0.5em;
+  padding: 1em 0.75em;
   background: white;
-  font-size: $font-up-1;
+  font-size: 1em;
   color: #32384a;
   .category-name {
     font-size: $font-up-1;
@@ -119,6 +124,8 @@
     flex-direction: column;
     text-align: center;
     font-size: $font-down-1;
+    background: #fbfcfe;
+    width: 100px;
   }
   .topic-likes {
     justify-content: center;
@@ -129,7 +136,7 @@
   }
   .main-link {
     flex: 0 0 65%;
-    font-size: $font-0;
+    font-size: 0.87em;
   }
 
   .main-link,
@@ -142,6 +149,11 @@
     box-sizing: border-box;
   }
 
+  .link-bottom-line {
+    font-size: 0.92em;
+    color: #5b6c86;
+  }
+
   .topic-likes {
     border-right: none;
     font-size: $font-down-1;
@@ -149,12 +161,18 @@
 
   .topic-last-poster {
     flex: 0 0 15%;
+    width: 200px;
     align-items: center;
-    font-size: $font-down-1;
+    font-size: 0.8em;
+    padding: 0.75em 1.5em;
     .poster-avatar {
       display: flex;
       align-items: center;
       margin-right: 0.5em;
+      img {
+        width: 32px;
+        height: 32px;
+      }
     }
     .last-poster-meta {
       display: flex;
@@ -162,6 +180,9 @@
       align-items: flex-start;
       .age {
         width: auto;
+        margin-top: 2px;
+        font-size: 0.92em;
+        color: #5b6c86;
         a {
           padding: 0;
         }
@@ -174,7 +195,7 @@
 .topic-list .main-link a.title,
 .latest-topic-list-item .main-link a.title {
   color: $tertiary;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .topic-statuses {
@@ -187,24 +208,13 @@
   color: #ed9c31;
 }
 
-.timeline-container {
-  box-sizing: border-box;
-  z-index: z("timeline");
-  margin-left: 757px;
+.topic-list-item.visited a.title:not(.badge-notification),
+.latest-topic-list-item.visited a.title:not(.badge-notification),
+.category-topic-link.visited a.title:not(.badge-notification) {
+  color: #551a8b;
+}
 
-  @include breakpoint(extra-large, min-width) {
-    margin-left: 740px;
-  }
-  @media all and (min-width: 1220px) {
-    margin-left: 760px;
-  }
-  @media all and (min-width: 1270px) {
-    margin-left: 800px;
-  }
-  @media all and (min-width: 1320px) {
-    margin-left: 850px;
-  }
-  @media all and (min-width: 1420px) {
-    margin-left: 950px;
-  }
+.topic-list th:first-of-type,
+.topic-list td:first-of-type {
+  padding-left: 1em;
 }

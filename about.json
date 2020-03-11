@@ -12,6 +12,8 @@
   "color_schemes": {
     "Faria": {
       "primary": "222222",
+      "primary-low": "d9e7f7",
+      "primary-very-low": "fbfcfe",
       "secondary": "ffffff",
       "tertiary": "4b8ffa",
       "quaternary": "4b8ffa",

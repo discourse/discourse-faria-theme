@@ -5,8 +5,13 @@
   .navigation-topics &,
   .categories-list &,
   .about-page &,
+  body[class*="category-"] &,
   body[class*="static-"] & {
     display: block;
+  }
+  .archetype-regular &,
+  .archetype-private_message & {
+    display: none !important;
   }
 }
 
@@ -18,6 +23,7 @@
 .private_message {
   background: white;
   padding: 0 1em;
+  box-shadow: 0 0 5px 0 rgba(41, 48, 65, 0.05);
 }
 
 .topic-area {
