@@ -121,6 +121,11 @@ article > .row {
   font-weight: normal;
 }
 
+.time-gap + .topic-post .topic-body,
+.time-gap + .topic-post .topic-avatar {
+  border-top: 1px solid $primary-low;
+}
+
 .embedded-posts {
   &.top,
   &.bottom {
