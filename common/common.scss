@@ -758,6 +758,22 @@ a.text-logo-wrapper {
   }
 }
 
+.btn-custom-back {
+  padding: 0;
+  margin-right: 0.5em;
+  .d-icon {
+    color: $secondary;
+  }
+  .discourse-no-touch & {
+    &:hover {
+      background: transparent;
+      .d-icon {
+        color: $secondary;
+      }
+    }
+  }
+}
+
 @keyframes background-fade-highlight {
   0% {
     background-color: #eff6ff;
