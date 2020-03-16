@@ -101,9 +101,16 @@
   background: white;
   font-size: 1em;
   color: #32384a;
+  position: relative;
   .category-name {
     font-size: $font-up-1;
     margin-bottom: 0.5em;
+  }
+
+  .combo-box {
+    position: absolute;
+    right: 1em;
+    top: 1em;
   }
 }
 
