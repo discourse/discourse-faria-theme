@@ -5,6 +5,14 @@
 
   var h = require('virtual-dom').h;
 
+  api.container.lookup("route:discovery").reopen({
+    actions: {
+      topicHeaderSortOrderChanged(order) {
+        this.transitionTo({queryParams: { order }});
+      }
+    }
+  });
+
   api.createWidget("header-username", {
      tagName: "span.header-username",
      buildKey: attrs => `header-username`,

@@ -1,1 +1,5 @@
-{{combo-box value=filtered content=content onChange=(action "filterChanged")}}
+{{combo-box
+  value=filtered
+  content=content
+  onChange=(route-action "topicHeaderSortOrderChanged")
+}}
