@@ -3,6 +3,10 @@ svg_icons:
   type: "list"
   list_type: "compact"
 
+category_groups:
+  type: "list"
+  default: "Default Categories: general, study-help, university"
+
 sidebar_forum_link:
   default: "/"
   type: "string"

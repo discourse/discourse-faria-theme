@@ -1,0 +1,58 @@
+<table id="custom-categories">
+  <tbody>
+
+    {{#each catGroupList as |t| }}
+    <thead>
+      <th class="custom-directory-header">Directory</th>
+      <th class="custom-topic-count">Topics</th>
+      <th class="custom-comment-count">Comments</th>
+      <th class="custom-categories-lastpost">Last Post</th>
+    </thead>
+    <tbody class="custom-group-{{dasherize t.name}}">
+
+      <tr class="custom-categories-group">
+        <td colspan="4">
+          <div>
+        {{t.name}}
+        <a id="{{dasherize t.name}}" class="btn-category-group-toggle" href {{action "toggleCats"}}>{{d-icon "angle-down"}}</a>
+
+      </div>
+      </td>
+      </tr>
+
+            {{#each t.cats as |c|}}
+
+            {{log c }}
+            <tr>
+              <td class="custom-category-title">
+                <a href="/c/{{c.slug}}/{{c.id}}">
+                {{#if c.uploaded_logo}}
+                  <img src="{{c.uploaded_logo}}" />
+                {{/if}}
+                <h3>{{c.name}}</h3>
+                <p>{{c.description}}</p>
+              </a>
+              </td>
+              <td class="custom-topic-count">
+                {{c.topics_all_time}}
+              </td>
+              <td class="custom-comment-count">
+                {{c.post_count}}
+              </td>
+              <td>
+                <div class="custom-categories-lastpost">
+                {{bound-avatar-template c.topics.[0].last_poster.avatar_template "medium"}}
+                  <div class="lastpost-text"><div><a href="/t/{{c.topics.[0].slug}}/{{c.topics.[0].id}}/{{c.topics.[0].last_read_post_number}}">{{c.topics.[0].fancy_title}}</a></div>
+                  by {{c.topics.[0].last_poster.username}} at {{formatted c.topics.[0].last_posted_at}}
+                </div>
+
+                </div>
+              </td>
+            </tr>
+            {{/each}}
+    </tbody>
+
+      {{/each}}
+
+    </tbody>
+  </table>
