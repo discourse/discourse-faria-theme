@@ -134,8 +134,44 @@ tbody {
   box-sizing: border-box;
 }
 
-.list-controls {
-  display: none;
+body:not(.staff) {
+  .list-controls {
+    display: none;
+  }
+}
+
+body.staff {
+  .list-controls {
+    position: relative;
+    width: 98.5%;
+    z-index: 9;
+
+    .category-heading {
+      display: none;
+    }
+    .category-notifications-button {
+      display: none;
+    }
+
+    .category-navigation,
+    .navigation-container {
+      #create-topic {
+        display: none;
+      }
+      position: absolute;
+      width: 100%;
+      > ol,
+      > ul {
+        display: none;
+      }
+      .select-kit {
+        margin-top: 1em;
+      }
+    }
+    .category-navigation {
+      top: 0.9em;
+    }
+  }
 }
 
 .drop-down-mode .d-header-icons .active .icon::after {
