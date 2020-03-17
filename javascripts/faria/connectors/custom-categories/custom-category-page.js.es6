@@ -10,10 +10,12 @@ export default {
     Ember.run.schedule("afterRender", this, function() {
       // After component renders, add the classes
       function classToggle() {
-        let storedCats = JSON.parse(localStorage.getItem("catGroups"));
-        storedCats.forEach(function(cat) {
-          $(cat).addClass("hide-children");
-        });
+        if (catGroups != null) {
+          let storedCats = JSON.parse(localStorage.getItem("catGroups"));
+          storedCats.forEach(function(cat) {
+            $(cat).addClass("hide-children");
+          });
+        }
       }
       classToggle();
     });
@@ -58,10 +60,7 @@ export default {
     toggleCats() {
       let id = $(event.target).attr("id");
       var storedCats = JSON.parse(localStorage.getItem("catGroups"));
-      if (
-        (storedCats != null) &
-        (storedCats.indexOf(".custom-group-" + id) > -1)
-      ) {
+      if (storedCats.indexOf(".custom-group-" + id) > -1) {
         catGroups.pop(".custom-group-" + id);
         $(".custom-group-" + id).removeClass("hide-children");
         localStorage.setItem("catGroups", JSON.stringify(catGroups));
