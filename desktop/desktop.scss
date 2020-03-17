@@ -65,3 +65,11 @@ article > .row {
     display: none;
   }
 }
+
+nav.post-controls .show-replies {
+  margin-left: 0.5em;
+}
+
+.discourse-no-touch .topic-body .actions .fade-out {
+  opacity: 1;
+}

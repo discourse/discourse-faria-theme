@@ -50,7 +50,10 @@ export default createWidget("home-logo", {
           }
         });
       } else {
-        return iconNode("home");
+        return h("a.text-logo-wrapper", [
+          h("a", { href: "/" }, iconNode("home")),
+          h("h1#site-text-logo.text-logo", { key: "logo-text" }, title)
+        ]);
       }
     } else if (showMobileLogo) {
       return h("img#site-logo.logo-big", {
