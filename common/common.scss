@@ -542,6 +542,7 @@ tbody {
       box-sizing: border-box;
 
       .sidebar-linked-stat {
+        background: $primary-very-low;
         display: flex;
         flex: 0 0 50%;
         @media screen and (max-width: 1300px) {

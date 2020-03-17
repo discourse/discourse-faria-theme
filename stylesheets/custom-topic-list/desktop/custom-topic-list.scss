@@ -102,15 +102,35 @@
   font-size: 1em;
   color: #32384a;
   position: relative;
+  display: flex;
   .category-name {
     font-size: $font-up-1;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.25em;
   }
 
-  .combo-box {
-    position: absolute;
-    right: 1em;
-    top: 1em;
+  .custom-category-info {
+    flex: 1 1 auto;
+    margin-right: 1em;
+  }
+
+  .custom-sort-wrapper {
+    display: flex;
+    font-size: 0.85em;
+    white-space: nowrap;
+    > span {
+      padding-top: 0.5em;
+      margin-right: 0.5em;
+    }
+    .select-kit.combo-box .select-kit-header {
+      border: 1px solid $primary-low;
+      border-radius: 4px;
+    }
+    .combo-box {
+      min-width: 150px;
+      .name {
+        font-weight: normal;
+      }
+    }
   }
 }
 

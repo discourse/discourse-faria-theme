@@ -12,16 +12,16 @@ export default Component.extend({
   content: computed(function() {
     return [
       {
+        id: "activity",
+        name: "Recently Updated"
+      },
+      {
         id: "likes",
-        name: "Likes"
+        name: "Most Liked"
       },
       {
         id: "posts",
-        name: "Replies"
-      },
-      {
-        id: "activity",
-        name: "Latest"
+        name: "Most Replies"
       }
     ];
   }),
