@@ -6,11 +6,11 @@ let catGroups = [];
 export default {
   setupComponent(args, component) {
     let parsed = [];
-    let storedCats;
 
     Ember.run.schedule("afterRender", this, function() {
       // After component renders, add the classes
       function classToggle() {
+        let storedCats;
         storedCats = JSON.parse(localStorage.getItem("catGroups"));
         storedCats.forEach(function(cat) {
           $(cat).addClass("hide-children");
