@@ -59,7 +59,7 @@ export default {
     toggleCats() {
       let id = $(event.target).attr("id");
       var storedCats = JSON.parse(localStorage.getItem("catGroups"));
-      if (storedCats.indexOf(".custom-group-" + id) > -1) {
+      if (storedCats & (storedCats.indexOf(".custom-group-" + id) > -1)) {
         catGroups.pop(".custom-group-" + id);
         $(".custom-group-" + id).removeClass("hide-children");
         localStorage.setItem("catGroups", JSON.stringify(catGroups));
