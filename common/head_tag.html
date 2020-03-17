@@ -143,7 +143,7 @@
         this.queueRerender();
         Ember.run.scheduleOnce('afterRender', () => {
           const $header = $('.d-header');
-          $header.toggleClass('header-search-enabled',
+          $header.addClass('header-search-enabled',
             !$('.panel > .search-menu').length && showHeaderSearch && !this._topic
           );
           $header.toggleClass('align-right', settings.align_right);
