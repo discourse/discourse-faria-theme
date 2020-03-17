@@ -9,8 +9,12 @@ export default {
 
     Ember.run.schedule("afterRender", this, function() {
       // After component renders, add the classes
+      if (localStorage.getItem("catGroups") === null) {
+        localStorage.setItem("catGroups");
+      }
       function classToggle() {
         if (catGroups != null) {
+          console.log(JSON.parse(localStorage.getItem("catGroups")));
           JSON.parse(localStorage.getItem("catGroups")).forEach(function(cat) {
             $(cat).addClass("hide-children");
           });
