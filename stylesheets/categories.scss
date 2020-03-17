@@ -122,11 +122,7 @@
 .custom-lastpost {
   padding: 1em !important;
   width: 250px;
-  max-width: 250px;
-
-  @media screen and (min-width: 1300px) {
-    padding: 1em 0 1em 1em !important;
-  }
+  min-width: 250px;
 }
 
 .btn-category-group-toggle {
