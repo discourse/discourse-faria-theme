@@ -11,12 +11,9 @@ export default {
       // After component renders, add the classes
       function classToggle() {
         if (catGroups != null) {
-          let storedCats = JSON.parse(localStorage.getItem("catGroups"));
-          if ((storedCats != null) & (storedCats.length > 0)) {
-            storedCats.forEach(function(cat) {
-              $(cat).addClass("hide-children");
-            });
-          }
+          JSON.parse(localStorage.getItem("catGroups")).forEach(function(cat) {
+            $(cat).addClass("hide-children");
+          });
         }
       }
       classToggle();
