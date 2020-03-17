@@ -12,9 +12,11 @@ export default {
       function classToggle() {
         if (catGroups != null) {
           let storedCats = JSON.parse(localStorage.getItem("catGroups"));
-          storedCats.forEach(function(cat) {
-            $(cat).addClass("hide-children");
-          });
+          if (storedCats.length > 0) {
+            storedCats.forEach(function(cat) {
+              $(cat).addClass("hide-children");
+            });
+          }
         }
       }
       classToggle();
