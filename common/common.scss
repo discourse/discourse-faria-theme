@@ -194,7 +194,7 @@ body.staff {
   #site-text-logo {
     font-weight: normal;
     font-size: $font-0;
-    color: $primary-medium;
+    color: #777;
   }
 
   .wrap {
@@ -266,7 +266,7 @@ body.staff {
       white-space: nowrap;
       text-transform: capitalize;
       font-size: 1em;
-      color: $primary-medium;
+      color: #777;
       @media screen and (max-width: 900px) {
         .d-icon {
           margin: 0;
@@ -313,7 +313,7 @@ body.staff {
       display: none;
     }
 
-    color: $primary-medium;
+    color: #777;
   }
 
   .header-dropdown-toggle {
@@ -323,7 +323,7 @@ body.staff {
       align-items: center;
       .d-icon {
         width: 1em;
-        margin-right: 0.5em;
+        margin-right: 0.25em;
         flex: 0 1 auto;
         font-size: 1em;
         @media screen and (max-width: 900px) {
@@ -344,7 +344,7 @@ body.staff {
     }
 
     > a {
-      color: $primary-medium;
+      color: #777;
     }
   }
 
@@ -409,7 +409,7 @@ body.staff {
 }
 
 .custom-sidebar-nav-contents {
-  padding: 2em 0 1em;
+  padding: 3em 0 1em;
   position: sticky;
   top: 4em;
 
@@ -454,7 +454,7 @@ body.staff {
 
     a,
     a.widget-link {
-      color: #b3d2ff;
+      color: #aaccff;
       display: flex;
       align-items: center;
       padding: 0.45em 1em;
@@ -487,6 +487,7 @@ body.staff {
     position: absolute;
     right: 1.25em;
     top: 1.25em;
+    color: #5b6c86;
   }
 }
 
@@ -614,14 +615,19 @@ body.staff {
     &.sidebar-button {
       .btn {
         width: 100%;
-        padding: 9px 6px 9px;
+        padding: 7px 6px 7px;
         font-size: 0.92em;
-        img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        div.m-img {
           width: 15px;
           height: 15px;
           border-radius: 100px;
           border: 1px solid $secondary;
           margin-right: 0.75em;
+          background: url($managebac);
+          background-size: cover;
         }
       }
     }
@@ -732,8 +738,9 @@ body.staff {
 
 a.text-logo-wrapper {
   .d-icon {
-    font-size: $font-up-1 !important;
+    font-size: 0.8em !important;
     margin-right: 0.25em;
+    margin-top: 0.2em;
     color: $tertiary;
   }
 }
