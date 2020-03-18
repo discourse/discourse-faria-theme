@@ -724,6 +724,10 @@ body.staff {
   display: flex;
   align-items: center;
 
+  .btn-flat .d-icon {
+    color: $secondary;
+  }
+
   a {
     padding-right: 0.5em;
     border-right: 1px solid $primary;
