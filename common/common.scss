@@ -36,7 +36,7 @@ html {
 .archetype-regular,
 .archetype-private_message {
   #main-outlet.wrap {
-    max-width: 2000px;
+    max-width: 1400px;
     margin-left: 0;
   }
 }
@@ -837,6 +837,11 @@ a.text-logo-wrapper {
   100% {
     background-color: transparent;
   }
+}
+
+#reply-control .d-editor-preview img:not(.thumbnail),
+.cooked img:not(.thumbnail) {
+  max-width: 100%;
 }
 
 @import "categories";
