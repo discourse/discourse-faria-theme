@@ -29,7 +29,15 @@ html {
   background: #eff6ff;
   font-family: "OpenSans", sans-serif;
   .wrap {
+    max-width: unset;
+  }
+}
+
+.archetype-regular,
+.archetype-private_message {
+  #main-outlet.wrap {
     max-width: 2000px;
+    margin-left: 0;
   }
 }
 
